@@ -1,0 +1,10 @@
+## Understanding the differences between px, rem and em
+
+This repo aims to demistify some of the confusion surrounding a few of the most used CSS measuring units: px, rem and em.
+You can simply clone this repo to your local and open the `index.html` file on your browser. To understand what's going on, consider the following:
+
+1. `px` is a static unit that's completely oblivious to the user's preferences. For the most part, it should be avoided, unless you are absolutely sure about why you're using `px`.
+2. `rem` is a responsive unit that takes the user's browser preferences into consideration. If the user changes their default preferred font-size, everything that uses `rem` as a unit will adapt accordingly. Font sizes should, more often than not, be referenced with `rem` instead of `px`.
+3. `em` is much like `rem`, but instead of just taking the user's browser defaults, it checks for the element's font-size and scales from that. It's ideal for some margins and paddings, which should be larger or smaller depending on font size. A `1em` padding, for example, will always preserve parity with the element's font size. That means you can have the same container for texts of multiple different sizes, and the padding will always correspond to the font size, be it `1rem` or `5rem`.
+
+To properly test this example, open the `index.html` file and your browser's settings. Try changing your browser's default font size and see how that reflects on this project. You will notice that, no matter how large or small you make your default fonts, the paragraph with the font size set in pixels never changes, while the other ones do. You should also notice that the paragraphs with the same font size will have different padding values. Like with the font, the one set in pixels never changes. Meanwhile, the one set in rems change according to the browser's default, and the one set in ems change according to both the browser defaults and the actual element's font size.
